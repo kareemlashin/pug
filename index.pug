@@ -1,0 +1,52 @@
+mixin name(vars)
+          ul 
+            li=vars
+
+doctype html 
+|
+|
+html
+    |
+    | 
+    head
+        |
+        |
+        title 
+          block namePage
+                  | doctor
+        link(rel="stylesheet", href="css/index.css")
+        include ./include/css.pug
+        
+        |
+        |
+        meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+        |
+        |
+        meta(name="keywords", content="doctor")
+        |
+        |
+    |
+    |
+    body
+       |
+       |
+       div(class="sidebar")
+       |
+       |
+       p sidebar 
+       |
+       |
+       main 
+          block content
+                 ul
+                   |
+                   |
+                   - for(var i=0;i<5;i++)
+                      li #{i}
+                 each val in [1,2,3,4,5]
+                           p #{val}
+                           |
+                           |
+                 
+                 p kareem
+                 +name('kareem')
